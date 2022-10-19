@@ -7,6 +7,8 @@
 
 This module injects flags that indicate a device type into the context and the component instance.
 
+See [demo on CodeSandbox](https://codesandbox.io/s/nuxt-device-evkf8k).
+
 ## Setup
 
 Add `nuxt-device` to the dev dependencies using npm to your project.
@@ -29,8 +31,8 @@ Add it to the `plugins` section of your `nuxt.config`:
 ```js
 {
     plugins: [
-    { src: '@/plugins/device.js', mode: 'client' },
-  ],
+      { src: '@/plugins/device.js' }
+    ],
 }
 ```
 
