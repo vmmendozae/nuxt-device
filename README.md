@@ -7,51 +7,46 @@
 
 This module injects flags that indicate a device type into the context and the component instance.
 
-See [demo on CodeSandbox](https://codesandbox.io/s/github/nuxt-community/device-module).
-
 ## Setup
 
 Add `nuxt-device` to the dev dependencies using npm to your project.
 
 ```bash
-npm install -D @nuxtjs/device
+npm install -D nuxt-device
 ```
 
-Add it to the `buildModules` section of your `nuxt.config`:
+Create `plugins/device.js` 
+
+```js
+import Vue from 'vue'
+import deviceMixins from 'nuxt-device'
+
+Vue.mixin(deviceMixins)
+```
+
+Add it to the `plugins` section of your `nuxt.config`:
 
 ```js
 {
-  buildModules: [
-   '@nuxtjs/device',
-  ]
+    plugins: [
+    { src: '@/plugins/device.js', mode: 'client' },
+  ],
 }
 ```
 
-That's it, you can now use `$device` in your [Nuxt](https://nuxtjs.org) app ✨
+That's it, you can now use it in your [Nuxt](https://nuxtjs.org) app ✨
 
 ## Flags
 
 You can use these flags to detect the device type.
 
 ```js
-$device.isDesktop
-$device.isMobile
-$device.isTablet
-$device.isMobileOrTablet
-$device.isDesktopOrTablet
-$device.isIos
-$device.isWindows
-$device.isMacOS
-$device.isAndroid
-$device.isFirefox
-$device.isEdge
-$device.isChrome
-$device.isSafari
-$device.isSamsung
-$device.isCrawler
+isDesktop
+isMobile
+isTablet
+isMobileOrTablet
+isDesktopOrTablet
 ```
-
-The user agent is also injected an accessible with `$device.userAgent`.
 
 ## Usage
 
@@ -60,10 +55,10 @@ The user agent is also injected an accessible with `$device.userAgent`.
 ```html
 <template>
   <section>
-    <div v-if="$device.isDesktop">
+    <div v-if="isDesktop">
       Desktop
     </div>
-    <div v-else-if="$device.isTablet">
+    <div v-else-if="isTablet">
       Tablet
     </div>
     <div v-else>
@@ -73,13 +68,13 @@ The user agent is also injected an accessible with `$device.userAgent`.
 </template>
 ```
 
-Of course, you can use `$device` via `this` in a script.
+Of course, you can use it via `this` in a script.
 
 ### Change a layout dynamically
 
 ```js
 export default {
-  layout: (ctx) => ctx.$device.isMobile ? 'mobile' : 'default'
+  layout: (ctx) => ctx.isMobile ? 'mobile' : 'default'
 }
 ```
 
@@ -88,11 +83,11 @@ export default {
 [MIT License](./LICENSE)
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/dt/@nuxtjs/device.svg?style=flat-square
-[npm-version-href]: https://npmjs.com/package/@nuxtjs/device
+[npm-version-src]: https://img.shields.io/npm/dt/nuxt-device.svg?style=flat-square
+[npm-version-href]: https://www.npmjs.com/package/nuxt-device
 
-[npm-downloads-src]: https://img.shields.io/npm/v/@nuxtjs/device/latest.svg?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/device
+[npm-downloads-src]: https://img.shields.io/npm/v/nuxt-device/latest.svg?style=flat-square
+[npm-downloads-href]: https://www.npmjs.com/package/nuxt-device
 
 [circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/device-module.svg?style=flat-square
 [circle-ci-href]: https://circleci.com/gh/nuxt-community/device-module
@@ -103,9 +98,5 @@ export default {
 [standard-js-src]: https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square
 [standard-js-href]: https://standardjs.com
 
-[license-src]: https://img.shields.io/npm/l/@nuxtjs/device.svg?style=flat-square
-[license-href]: https://npmjs.com/package/@nuxtjs/device
-
-## Data Source
-
-This module uses [crawler-user-agents](https://github.com/monperrus/crawler-user-agents) to generate the regular expression that detect a crawler.
+[license-src]: https://img.shields.io/npm/l/nuxt-device.svg?style=flat-square
+[license-href]: https://npmjs.com/package/nuxt-device
