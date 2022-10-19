@@ -38,4 +38,4 @@ const deviceMixins = {
     }
 }
 
-module.exports = { deviceMixins }
+module.exports = deviceMixins 

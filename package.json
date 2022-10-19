@@ -1,8 +1,8 @@
 {
   "name": "nuxt-device",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Device & responsive detection module for Nuxt.js",
-  "main": "src/module.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,6 +28,5 @@
   "bugs": {
     "url": "https://github.com/vmmendozae/nuxt-device/issues"
   },
-  "homepage": "https://github.com/vmmendozae/nuxt-device#readme",
-  "preferGlobal": true
+  "homepage": "https://github.com/vmmendozae/nuxt-device#readme"
 }
