@@ -11,11 +11,9 @@ See [demo on CodeSandbox](https://codesandbox.io/s/github/nuxt-community/device-
 
 ## Setup
 
-Add `@nuxtjs/device` to the dev dependencies using yarn or npm to your project.
+Add `nuxt-device` to the dev dependencies using npm to your project.
 
 ```bash
-yarn add --dev @nuxtjs/device
-# Using npm
 npm install -D @nuxtjs/device
 ```
 
@@ -30,20 +28,6 @@ Add it to the `buildModules` section of your `nuxt.config`:
 ```
 
 That's it, you can now use `$device` in your [Nuxt](https://nuxtjs.org) app ✨
-
-## TypeScript support
-
-Add the types to your `"types"` array in `tsconfig.json` after the `@nuxt/types` entry.
-
-:warning: Use `@nuxt/vue-app` instead of `@nuxt/types` for nuxt < 2.9.
-
-```json
-{
-  "compilerOptions": {
-    "types": ["@nuxt/types", "@nuxtjs/device"]
-  }
-}
-```
 
 ## Flags
 
@@ -98,61 +82,6 @@ export default {
   layout: (ctx) => ctx.$device.isMobile ? 'mobile' : 'default'
 }
 ```
-
-### Add a custom flag
-
-You can add other flags to `$device` by adding a [Nuxt plugin](https://nuxtjs.org/docs/2.x/directory-structure/plugins):
-
-```js
-// plugins/custom-flag.js
-export default function ({ $device }) {
-  $device.isCustom = $device.userAgent.includes('Custom-Agent') ? true : false
-}
-```
-
-### Options
-
-`defaultUserAgent` option can be used when running `npm run generate`.
-
-```js
-{
-  buildModules: ['@nuxtjs/device'],
-  device: {
-    defaultUserAgent: 'Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Mobile Safari/537.36'
-  }
-}
-```
-
-`refreshOnResize` refresh flags when the window resized.(default: false)
-
-```js
-{
-  buildModules: ['@nuxtjs/device'],
-  device: {
-    refreshOnResize: true
-  }
-}
-```
-
-Note that the default user agent value is set to `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36`.
-## CloudFront Support
-
-If a user-agent is `Amazon CloudFront`, this module checks
-the both headers `CloudFront-Is-Mobile-Viewer` and `CloudFront-Is-Tablet-Viewer`.
-
-Here are the details about the headers:
-https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html#header-caching-web-device
-
-### Caution
-
-`isIos`, `isWindows` and `isMacOS` flags are not available with CloudFront.
-
-## Cloudflare Support
-
-This module checks the header `CF-Device-Type`.
-
-Here are the details about the header:
-https://support.cloudflare.com/hc/en-us/articles/229373388-Cache-Content-by-Device-Type-Mobile-Tablet-Desktop-
 
 ## License
 

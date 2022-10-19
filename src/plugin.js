@@ -38,4 +38,4 @@ const deviceMixins = {
     }
 }
 
-export default deviceMixins
+module.exports = { deviceMixins }
