@@ -1,0 +1,36 @@
+{
+  "name": "nuxt-device",
+  "version": "1.0.0",
+  "description": "Device & responsive detection module for Nuxt.js",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmmendozae/nuxt-device.git"
+  },
+  "keywords": [
+    "nuxt",
+    "nuxtjs",
+    "nuxt-module",
+    "nuxt-bowser",
+    "nuxt-browser",
+    "browser-detector",
+    "nuxt-browser-detector",
+    "device-detector",
+    "nuxt-detector",
+    "nuxt-device",
+    "detector"
+  ],
+  "author": "Victor Mendoza <victor@unergy.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vmmendozae/nuxt-device/issues"
+  },
+  "homepage": "https://github.com/vmmendozae/nuxt-device#readme",
+  "bin": {
+    "nuxt-device": ".bin/global.js"
+  },
+  "preferGlobal": true
+}
