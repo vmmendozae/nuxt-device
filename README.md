@@ -12,7 +12,7 @@ This module injects flags that indicate a device type into the context and the c
 Add `nuxt-device` to the dev dependencies using npm to your project.
 
 ```bash
-npm install -D nuxt-device
+npm install nuxt-device
 ```
 
 Create `plugins/device.js` 
