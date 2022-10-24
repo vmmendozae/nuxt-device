@@ -48,6 +48,10 @@ isMobile
 isTablet
 isMobileOrTablet
 isDesktopOrTablet
+isIos
+isAndroid
+isWindows
+isMacOS
 ```
 
 ## Usage

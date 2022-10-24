@@ -23,6 +23,18 @@ const deviceMixins = {
         },
         isDesktopOrTablet() {
             return this.isDesktop || this.isTablet
+        },
+        isIos() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent)
+        },
+        isAndroid() {
+            return /android/i.test(navigator.userAgent)
+        },
+        isWindows() {
+            return /Windows/.test(navigator.userAgent)
+        },
+        isMacOS() {
+            return /Mac OS X/.test(navigator.userAgent)
         }
     },
     methods: {
