@@ -1,6 +1,6 @@
 {
   "name": "nuxt-device",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "Device & responsive detection module for Nuxt.js",
   "main": "index.js",
   "scripts": {
